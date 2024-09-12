@@ -28,5 +28,19 @@ namespace EmployeePortal.Controllers
             await emp.SaveEmployee(vm);
             return Ok(vm);
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> updateEmployee(int id, Employee vm)
+        {
+            await emp.updateEmployee(id, vm);
+            return Ok(vm);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> deleteEmployee(int id)
+        {
+            await emp.DeleteEmployee(id);
+            return Ok();
+        }
     }
 }
